@@ -13,11 +13,11 @@
         <div class="container mt-5">
             <div class='row'>
             @foreach ($musings as $musing)
-                <div class="col-md-4 col-sm-12 mb-3">
-                    <div class="card">
+                <div class="col-sm-12 mb-4">
+                    <div class="card {{$musing->sentiment}}">
                         <div class="card-body">
                             <h5 class="card-title"><b>{{$musing->entry_title}}</b></h5>
-                            <small>{{$musing->date_title}}</small>
+                            <small>Thoughts on {{$musing->date_title}}</small>
                             <hr>
                             <p class="card-text">{{$musing->entry_body}}</p>
                         </div>

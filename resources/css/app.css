@@ -4,6 +4,9 @@
 :root {
     --background-light: linear-gradient(145deg, #ffffff, #f8f8f8);
     --background-dark: linear-gradient(145deg, #3d3d3d, #1e1e1e);
+    --secondary-background-dark: linear-gradient(145deg, #232323, #0d0d0d);
+    --secondary-background-dark-navbar: #202020d4;
+    --secondary-background-light-navbar: #e3e3e39e;
     --card-background-light: #ffffff;
     --card-background-dark: #3d3d3d;
     --text-light: #000; /* Black text for light mode */
@@ -14,15 +17,20 @@
     --placeholder-dark: #aaa; /* Subtle placeholder for dark mode */
     --shadow-light: rgba(0, 0, 0, 0.2);
     --shadow-dark: rgba(255, 255, 255, 0.2);
+    --background-positive-light: #f1ffe7;
+    --background-negative-light: #ffc9c9;
+    --background-positive-dark: #505c47;
+    --background-negative-dark: #633b3b;
+
 }
 
 p, h1, h2, h3, h4, h5, label {
     color: var(--text-light);
 }
 * {
-    font-family: "Montserrat" !important;
+    font-family: "PT Serif" !important;
 }
-/* Global body styling with paper texture */
+
 body {
     background: var(--background-light);
     color: var(--text-light);
@@ -61,9 +69,17 @@ input::placeholder, textarea::placeholder {
 
 /* Navbar styling */
 .navbar {
-    background: var(--background-light);
+    background: var(--secondary-background-light-navbar) !important;
+    backdrop-filter: blur(10px);
     box-shadow: 0px 2px 5px var(--shadow-light);
     transition: background 0.3s, box-shadow 0.3s;
+    width: 100%;
+    position: fixed;
+    z-index: 12333;
+}
+
+main {
+    margin-top: 80px;
 }
 
 .navbar a.nav-link {
@@ -106,6 +122,14 @@ footer {
     transition: background 0.3s, color 0.3s, box-shadow 0.3s;
 }
 
+.card.negative {
+    background: var(--background-negative-light) !important;
+}
+
+.card.positive {
+    background: var(--background-positive-light) !important;
+}
+
 /* Dark mode support */
 @media (prefers-color-scheme: dark) {
     p, h1, h2, h3, h4, h5, label {
@@ -142,8 +166,9 @@ footer {
     }
 
     .navbar {
-        background: var(--background-dark);
+        background: var(--secondary-background-dark-navbar) !important;
         box-shadow: 0px 2px 5px var(--shadow-dark);
+        backdrop-filter: blur(10px);
     }
 
     .navbar a.nav-link {
@@ -171,7 +196,13 @@ footer {
         box-shadow: 0px 2px 15px var(--shadow-dark);
         border: none;
     }
-
+    .card.negative {
+        background: var(--background-negative-dark) !important;
+    }
+    
+    .card.positive {
+        background: var(--background-positive-dark) !important;
+    }
     .form-control {
         background-color: #3d3d3d;
         color: var(--text-dark);
