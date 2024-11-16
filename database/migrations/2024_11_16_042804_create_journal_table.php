@@ -16,6 +16,8 @@ return new class extends Migration
             $table->timestamps();
             $table->string('entry_title');
             $table->text('entry_body');
+            $table->float('sentiment_value')->nullable();
+            $table->string('card_colour')->nullable();
         });
     }
 

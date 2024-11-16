@@ -20,21 +20,21 @@ p, h1, h2, h3, h4, h5, label {
     color: var(--text-light);
 }
 * {
-    font-family: "Montserrat";
+    font-family: "Montserrat" !important;
 }
 /* Global body styling with paper texture */
 body {
     background: var(--background-light);
     color: var(--text-light);
-    font-family: 'PT Serif', serif;
     margin: 0;
     padding: 0;
     background-blend-mode: soft-light;
     background: 
         radial-gradient(circle, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
         radial-gradient(circle, rgba(0, 0, 0, 0.02) 15px, transparent 1px),
+        repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.01) 0, rgba(0, 0, 0, 0.01) 2px, transparent 2px, transparent 4px),
         var(--background-light);
-    background-size: 4px 4px, 15px 15px, 100%;
+    background-size: 4px 4px, 15px 15px, 8px 8px, 100%;
     transition: background 0.3s, color 0.3s;
 }
 
@@ -135,7 +135,9 @@ footer {
         background: 
             radial-gradient(circle, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
             radial-gradient(circle, rgba(255, 255, 255, 0.02) 15px, transparent 1px),
+            repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.01) 0, rgba(255, 255, 255, 0.01) 2px, transparent 2px, transparent 4px),
             var(--background-dark);
+        background-size: 4px 4px, 15px 15px, 8px 8px, 100%;
         color: var(--text-dark);
     }
 
