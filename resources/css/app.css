@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* Root variables for light and dark mode colors */
+:root {
+    --background-light: linear-gradient(145deg, #ffffff, #f8f8f8);
+    --background-dark: linear-gradient(145deg, #3d3d3d, #1e1e1e);
+    --card-background-light: #ffffff;
+    --card-background-dark: #3d3d3d;
+    --text-light: #000; /* Black text for light mode */
+    --text-dark: #fff; /* White text for dark mode */
+    --input-bg-light: #f8f8f8;
+    --input-bg-dark: #444;
+    --placeholder-light: #888; /* Subtle placeholder for light mode */
+    --placeholder-dark: #aaa; /* Subtle placeholder for dark mode */
+    --shadow-light: rgba(0, 0, 0, 0.2);
+    --shadow-dark: rgba(255, 255, 255, 0.2);
+}
+
+p, h1, h2, h3, h4, h5, label {
+    color: var(--text-light);
+}
+* {
+    font-family: "Montserrat";
+}
+/* Global body styling with paper texture */
+body {
+    background: var(--background-light);
+    color: var(--text-light);
+    font-family: 'PT Serif', serif;
+    margin: 0;
+    padding: 0;
+    background-blend-mode: soft-light;
+    background: 
+        radial-gradient(circle, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+        radial-gradient(circle, rgba(0, 0, 0, 0.02) 15px, transparent 1px),
+        var(--background-light);
+    background-size: 4px 4px, 15px 15px, 100%;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Input and Textarea Styling */
+input, textarea {
+    background: var(--input-bg-light);
+    color: var(--text-light);
+    border: none !important;
+    border-radius: 4px;
+    padding: 0.75rem;
+    font-family: 'PT Serif', serif;
+    font-size: 1rem;
+    transition: background 0.3s, color 0.3s, border-color 0.3s;
+}
+
+
+/* Placeholder styling */
+input::placeholder, textarea::placeholder {
+    color: var(--placeholder-light);
+    font-style: italic;
+    font-size: large;
+}
+
+
+/* Navbar styling */
+.navbar {
+    background: var(--background-light);
+    box-shadow: 0px 2px 5px var(--shadow-light);
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.navbar a.nav-link {
+    color: var(--text-light) !important;
+    font-weight: 600;
+}
+
+.navbar a.nav-link:hover {
+    color: #007bff !important;
+}
+
+.navbar .navbar-brand {
+    color: var(--text-light) !important;
+}
+
+.navbar-toggler {
+    border-color: #ddd;
+}
+
+.navbar-toggler-icon {
+    filter: grayscale(50%);
+}
+
+/* Footer styling */
+footer {
+    background: var(--background-light);
+    color: var(--text-light);
+    font-family: 'PT Serif', serif;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0px -2px 5px var(--shadow-light);
+}
+
+/* Card styling */
+.card {
+    background: var(--card-background-light);
+    color: var(--text-light);
+    box-shadow: 0px 2px 15px var(--shadow-light);
+    border-radius: 8px;
+    padding: 1rem;
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    p, h1, h2, h3, h4, h5, label {
+        color: var(--text-dark);
+    }
+
+    input, textarea {
+        background: var(--input-bg-dark);
+        color: var(--text-dark);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    input:focus, textarea:focus {
+        outline: none !important;
+        background: var(--input-bg-dark) !important;
+        border: none;
+    }
+
+    input[type="text"]:focus, textarea:focus {
+        color: var(--text-dark) !important;
+    }
+
+    input::placeholder, textarea::placeholder {
+        color: var(--placeholder-dark);
+    }
+    body {
+        background: 
+            radial-gradient(circle, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+            radial-gradient(circle, rgba(255, 255, 255, 0.02) 15px, transparent 1px),
+            var(--background-dark);
+        color: var(--text-dark);
+    }
+
+    .navbar {
+        background: var(--background-dark);
+        box-shadow: 0px 2px 5px var(--shadow-dark);
+    }
+
+    .navbar a.nav-link {
+        color: var(--text-dark) !important;
+    }
+
+    .navbar .navbar-brand {
+        color: var(--text-dark) !important;
+    }
+
+    .navbar-toggler {
+        border-color: #444;
+    }
+
+    footer {
+        background: var(--background-dark);
+        color: var(--text-dark);
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0px -2px 5px var(--shadow-dark);
+    }
+
+    .card {
+        background: var(--card-background-dark);
+        color: var(--text-dark);
+        box-shadow: 0px 2px 15px var(--shadow-dark);
+        border: none;
+    }
+
+    .form-control {
+        background-color: #3d3d3d;
+        color: var(--text-dark);
+    }
+
+    .form-control::placeholder {
+        color: var(--text-dark);
+    }
+
+    .navbar-toggler-icon {
+        color: var(--text-dark);
+    }
+
+
+}
+
+/* Fade-In and Up Animation */
+@keyframes fadeInUp {
+    0% {
+        opacity: 1;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade-Out and Down Animation */
+@keyframes fadeOutDown {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(20px);
+    }
+}
+
+/* Apply animations to the body or container */
+main {
+    animation: fadeInUp 0.9s forwards;
+}
+
+main.fade-out-down {
+    animation: fadeOutDown 0.8s forwards;
+}
+
+button.submit-button {
+    max-width: 400px;
+    border: none;
+}
+
+.button-container {
+    text-align: center;
+}
