@@ -18,9 +18,11 @@
     --shadow-light: rgba(0, 0, 0, 0.2);
     --shadow-dark: rgba(255, 255, 255, 0.2);
     --background-positive-light: #f1ffe7;
-    --background-negative-light: #ffc9c9;
-    --background-positive-dark: #505c47;
-    --background-negative-dark: #633b3b;
+    --background-negative-light: #e0f2ff;
+    --background-positive-dark: #647556;
+    --background-negative-dark: #3b5163;
+    --background-neutral-light: #ffffff;
+    --background-neutral-dark: #776447;
 
 }
 
@@ -103,6 +105,9 @@ main {
     filter: grayscale(50%);
 }
 
+.today-datetime {
+    padding-left: 12px;
+}
 /* Footer styling */
 footer {
     background: var(--background-light);
@@ -117,9 +122,13 @@ footer {
     background: var(--card-background-light);
     color: var(--text-light);
     box-shadow: 0px 2px 15px var(--shadow-light);
-    border-radius: 8px;
+    border-radius: 25px;
     padding: 1rem;
     transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.card-container.composer {
+    padding-top: 20px;
 }
 
 .card.negative {
@@ -128,6 +137,20 @@ footer {
 
 .card.positive {
     background: var(--background-positive-light) !important;
+    animation: breathing 9s infinite;
+
+}
+
+.card.neutral {
+    background: var(--background-neutral-light) !important;
+}
+
+.time {
+    font-size: 30px;
+}
+
+@keyframes breathing {
+    50% {box-shadow: 0px 0px 30px rgb(203, 255, 114);}
 }
 
 /* Dark mode support */
@@ -193,7 +216,7 @@ footer {
     .card {
         background: var(--card-background-dark);
         color: var(--text-dark);
-        box-shadow: 0px 2px 15px var(--shadow-dark);
+        /* box-shadow: 0px 2px 15px var(--shadow-dark); */
         border: none;
     }
     .card.negative {
@@ -202,6 +225,16 @@ footer {
     
     .card.positive {
         background: var(--background-positive-dark) !important;
+        color: white;
+        animation: breathing 9s infinite;
+    }
+
+    @keyframes breathing {
+        50% {box-shadow: 0px 0px 80px rgb(255, 255, 255);}
+    }
+
+    .card.neutral {
+        background: var(--background-neutral-dark) !important;
     }
     .form-control {
         background-color: #3d3d3d;
@@ -213,6 +246,10 @@ footer {
     }
 
     .navbar-toggler-icon {
+        color: var(--text-dark);
+    }
+
+    button.submit-button {
         color: var(--text-dark);
     }
 

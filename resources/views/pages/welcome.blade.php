@@ -8,9 +8,13 @@
         </div>
         <form id='musing-form' method="POST" action={{route('submitMusing')}}>
         {{ csrf_field() }}
-        <div class='card-container'>
+        <div class='card-container composer'>
             <div class="card">
                 <div class="card-body">
+                    <div class="mb-3">
+                        <div class='today-datetime' id='clock'></div>
+                        <hr>
+                    </div>
                     <div class="mb-3">
                         {{-- <label for="title" class="form-label">Title</label> --}}
                         <input type="text" id="journal-title" name="journal-title" class="form-control journal-input" placeholder="What's on your mind today...">

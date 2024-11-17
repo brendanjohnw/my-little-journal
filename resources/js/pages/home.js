@@ -65,6 +65,34 @@ export default function HomePage(params) {
         rules: rules,
         context: this,
     });
+    // Source: https://www.w3schools.com/js/tryit.asp?filename=tryjs_timing_clock
+
+    function startTime() {
+        const today = new Date();
+        let h = today.getHours();
+        let m = today.getMinutes();
+        let s = today.getSeconds();
+        const ampm = h >= 12 ? 'PM' : 'AM';
+        h = h % 12;
+        h = h ? h : 12; 
+        m = checkTime(m);
+        s = checkTime(s);
+    
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        const date = today.toLocaleDateString(undefined, options);
+    
+        document.getElementById('clock').innerHTML =  "<div class='time'>"+h+ ":" + m + " " + ampm + "</div>" + date ;
+        setTimeout(startTime, 1000);
+    }
+    
+    function checkTime(i) {
+        if (i < 10) {
+            i = "0" + i;
+        }
+        return i;
+    }
+
+    startTime();
 
 }
 

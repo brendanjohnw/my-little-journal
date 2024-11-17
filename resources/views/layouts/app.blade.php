@@ -16,7 +16,7 @@
 <body>
     <div class="d-flex flex-column min-vh-100">
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg bg-body-tertiary shadow">
+        <nav class="navbar navbar-expand-lg shadow">
     
             <div class="container-fluid">
               <a class="navbar-brand" href="#">My Little Journal</a>
