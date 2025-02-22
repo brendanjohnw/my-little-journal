@@ -30,7 +30,8 @@ p, h1, h2, h3, h4, h5, label {
     color: var(--text-light);
 }
 * {
-    font-family: "PT Serif" !important;
+    /* font-family: "PT Serif" !important; */
+    font-family: "Montserrat" !important;
 }
 
 body {
@@ -296,4 +297,8 @@ button.submit-button {
 
 .button-container {
     text-align: center;
+}
+
+h5.card-title.musing-title {
+    text-align: left;
 }
